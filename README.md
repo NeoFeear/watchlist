@@ -19,8 +19,9 @@ A force de regarder 500 séries différentes, je ne sais jamais je me suis arrê
 Ce projet va donc m'être bien utile :D
 
 ## Angular Version
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.13.
+Ce projet a été généré avec la version 12.2.13 de [Angular CLI](https://github.com/angular/angular-cli).
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Utilisez la commande `ng serve --open` afin de lancer le serveur et l'ouvrir.
+L'application se rechargera automatiquement si vous modifiez l'un des fichiers sources.
