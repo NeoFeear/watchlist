@@ -5,20 +5,18 @@
 
     <div class="col d-flex flex-column">
         <div class="row d-flex align-items-start">
-            <h2><b>[{{id}}] - {{ animeTitle }}</b></h2>
-            <h5><u>Nombre d'épisodes :</u> {{ animeNbEpisodes }}</h5>
+            <h2>
+                <b>[{{id}}] - {{ animeTitle }}</b>
+                <span class="rounded-pill bg-success border border-dark ms-3 px-3 pb-1">{{ animeNote }}/10</span>
+            </h2>
+            <h5><u>Nombre d'épisodes:</u> {{ animeNbEpisodes }}</h5>
+            <h5><u>Auteur:</u> {{ animeAutor }} | <u>Réalisateur:</u> {{ animeRealisator }}</h5>
+            <h5><u>Studio:</u> {{ animeStudio }}</h5>
         </div>
 
         <div class="row d-flex align-items-end text-justify mt-auto pe-4" style="text-align: justify;">
             <p>{{ animeSynopsis }}</p>
         </div>
-    </div>
-
-    <div class="col-2 my-auto">
-        <h2 class="rounded-pill bg-success border border-dark d-flex justify-content-center mx-4 pb-1">{{ animeNote }}/10</h2>
-        <h5><u>Réalisateur :</u><br />{{ animeAutor }}</h5>
-        <h5><u>Réalisateur :</u><br />{{ animeRealisator }}</h5>
-        <h5><u>Studio :</u><br />{{ animeStudio }}</h5>
     </div>
 
     <div class="col-1 my-auto d-flex flex-column mx-auto">
