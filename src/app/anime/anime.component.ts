@@ -1,23 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AnimeService } from '../services/anime/anime.service';
 
 @Component({
-  selector: 'app-anime',
-  templateUrl: './anime.component.html',
-  styleUrls: ['./anime.component.scss']
+    selector: 'app-anime',
+    templateUrl: './anime.component.html',
+    styleUrls: ['./anime.component.scss']
 })
+
 export class AnimeComponent implements OnInit {
 
-  animeName = 'FullMetal Alchemist';
-  animeOnAir = "En BluRay";
-  animeAffiche = 'https://fr.web.img6.acsta.net/pictures/19/07/29/15/50/2364027.jpg';
+    @Input() id?: number;
+    @Input() index?: number;
+    @Input() animeTitle?: string;
+    @Input() animeAutor?: string;
+    @Input() animeRealisator?: string;
+    @Input() animeStudio?: string;
+    @Input() animeNbEpisodes?: string;
+    @Input() animeSynopsis?: string;
+    @Input() animeNote?: number;
+    @Input() animeAffiche?: string;
 
-  constructor() { }
+    constructor(
+        private Anime: AnimeService
+    ) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
-  ngGetOnAir() {
-    return this.animeOnAir;
-  }
+    delete():void {
+        // this.Anime.delete(this.id);
+    }
 
 }

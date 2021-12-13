@@ -1,0 +1,15 @@
+<ul class="list-group mb-5">
+    <app-anime  
+        *ngFor="let anime of animes; let i = index"
+        [index]="i"
+        [id]="anime.id"
+        [animeTitle]="anime.title" 
+        [animeAutor]="anime.autor" 
+        [animeRealisator]="anime.realisator" 
+        [animeStudio]="anime.studio" 
+        [animeNbEpisodes]="anime.nbEpisodes" 
+        [animeSynopsis]="anime.synopsis" 
+        [animeNote]="anime.note"
+        [animeAffiche]="anime.filmAffiche">
+    </app-anime>
+</ul>
