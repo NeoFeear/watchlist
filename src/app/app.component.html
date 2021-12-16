@@ -1,23 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-info">
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <div class="container">
-    <a class="navbar-brand" routerLink="">My Watchlist</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="navbar-nav">
-        <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="animes">Animes</a>
-        </li>
-        <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="series">Séries</a>
-        </li>
-        </ul>
-    </div>
-    <!-- <div class="navbar-right">
-            Connexion : <b>{{ time }}s</b>
-        </div> -->
+        <a class="navbar-brand" routerLink="">My Watchlist</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav">
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" routerLink="animes">Animes</a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" routerLink="series">Séries</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar-right text-dark">
+            Connexion : <b><!-- {{ time }} -->s</b>
+        </div>
     </div>
 </nav>
 
