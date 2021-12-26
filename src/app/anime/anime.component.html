@@ -29,15 +29,18 @@
     <img class="img-thumbnail" style="width: 100%; height: 100%; max-height: 400px;" [src]="animeAffiche" alt="{{ animeTitle }}">
 </a>
 
-<div class="bg-white text-dark" style="margin-top: -5px; padding-top: 3px; height: 30px;">
+<div class="bg-white text-dark" style="margin-top: -5px; padding-top: 10px; height: 45px;">
     <div class="row">
-        <div class="col-9 text-center">
+        <div class="col-6 col-xl-7 text-center">
             <p><b>{{ animeNote }} / 10</b></p>
         </div>
-        <div class="col-3">
-            <a [routerLink]="['/anime/modif', id]">
+        <div class="col">
+            <button class="btn btn-sm btn-warning me-0 me-sm-2 me-md-3" [routerLink]="['/anime/modif', id]">
                 <fa-icon [icon]="faEdit"></fa-icon>
-            </a>
+            </button>
+            <button class="btn btn-sm btn-danger" (click)="suppr()">
+                <fa-icon [icon]="faTrash"></fa-icon>
+            </button>
         </div>
     </div>
 </div>

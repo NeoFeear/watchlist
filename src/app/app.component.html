@@ -16,14 +16,15 @@
                     <a class="nav-link" routerLink="series">Séries</a>
                 </li>
             </ul>
+            <div class="text-dark ms-auto">
+                Connexion : <b>{{ time }}s</b>
+            </div>
         </div>
 
-        <div class="navbar-right text-dark">
-            Connexion : <b>{{ time }}s</b>
-        </div>
+        
     </div>
 </nav>
 
-<div class="container bg-dark mt-5">
+<div class="container bg-dark my-5">
     <router-outlet></router-outlet>
 </div>

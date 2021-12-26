@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AnimeService } from '../services/anime/anime.service';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 @Component({
     selector: 'app-anime',
     templateUrl: './anime.component.html',
@@ -10,6 +10,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 export class AnimeComponent implements OnInit {
 
     faEdit = faEdit;
+    faTrash = faTrash;
 
     @Input() id?: number;
     @Input() index?: number;
@@ -30,7 +31,9 @@ export class AnimeComponent implements OnInit {
     }
 
     suppr():void {
-        this.Anime.delete(this.id);
+        if (confirm("Voulez-vous vraiment supprimer cet anime ?")) {
+            this.Anime.delete(this.id);
+        }
     }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Anime } from '../models/anime.model';
-import { AnimeService } from '../services/anime/anime.service';
+import { Anime } from 'src/app/models/anime.model';
+import { AnimeService } from 'src/app/services/anime/anime.service';
 
 @Component({
   selector: 'app-anime-new',

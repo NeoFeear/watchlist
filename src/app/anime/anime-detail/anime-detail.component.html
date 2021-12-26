@@ -1,0 +1,32 @@
+<div class="bg-secondary px-5 py-3 text-dark">
+    <div class="row mb-5 py-3">
+        <div class="col-12 col-md-6 col-lg-3 mb-3 mb-md-0 d-flex align-items-center">
+            <img [src]="anime.filmAffiche" alt="{{ anime.title }}" class="img-fluid img-responsive">
+        </div>
+    
+        <div class="col d-flex flex-column h-100">
+            <div class="row">
+                <h1 style="font-size: 50px;"><b>{{ anime.title }}</b></h1>
+
+                <h2 class="my-5">
+                    <b><u>Ma note :</u> <span class="rounded-pill text-white bg-success border border-dark ms-3 px-3 pb-1">{{ anime.note }} / 10</span></b>
+                </h2>
+
+                <h5><u>Nombre d'épisodes:</u> {{ anime.nbEpisodes }}</h5>
+                <h5><u>Auteur:</u> {{ anime.autor }}</h5>
+                <h5><u>Réalisateur:</u> {{ anime.realisator }}</h5>
+                <h5><u>Studio:</u> {{ anime.studio }}</h5>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mb-5">
+        <h1 class="text-decoration-underline mb-3">Synopsis :</h1>
+        <h4 style="text-align: justify;">{{ anime.synopsis }}</h4>
+    </div>
+    
+    <div class="row mb-5 d-flex justify-content-center">
+        <h1 class="text-decoration-underline mb-3 text-start">Bande annonce :</h1>
+        <iframe style="width: 800px; height: 450px;" class="border" src="https://www.youtube.com/embed/{{trailer.__zone_symbol__value}}" title="{{ anime.title }} | BANDE ANNONCE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>

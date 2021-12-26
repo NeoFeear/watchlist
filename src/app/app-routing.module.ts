@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
-import { AnimeListComponent } from './anime-list/anime-list.component';
-import { AnimeModifComponent } from './anime-modif/anime-modif.component';
-import { AnimeNewComponent } from './anime-new/anime-new.component';
+import { AnimeDetailComponent } from './anime/anime-detail/anime-detail.component';
+import { AnimeListComponent } from './anime/anime-list/anime-list.component';
+import { AnimeModifComponent } from './anime/anime-modif/anime-modif.component';
+import { AnimeNewComponent } from './anime/anime-new/anime-new.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AnimeService } from '../services/anime/anime.service';
+import { AnimeService } from 'src/app/services/anime/anime.service';
 
 @Component({
   selector: 'app-anime-modif',
