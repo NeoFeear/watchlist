@@ -1,23 +1,24 @@
-export class Anime {
+export class Film {
     id?: string;
     title: string;
-    autor: string;
+    scenarist: string;
     realisator: string;
-    studio: string;
-    nbEpisodes: string;
+    actors: string;
+    genre: string;
+    duree: string;
     synopsis: string;
     note: string;
     affiche: string;
   
     constructor() {
       this.title = '';
-      this.autor = '';
+      this.scenarist = '';
       this.realisator = '';
-      this.studio = '';
-      this.nbEpisodes = '';
+      this.actors = '';
+      this.duree = '';
+      this.genre = '';
       this.synopsis = '';
       this.note = '';
       this.affiche = '';
     }
-  }
-  
+}

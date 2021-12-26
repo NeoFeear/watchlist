@@ -24,7 +24,7 @@ export class AnimeModifComponent implements OnInit {
     });
   }
 
-  modif(): void {
+  update(): void {
     this.Anime.update(this.anime).subscribe(() => {
       this.change = true;
       setTimeout(() => {

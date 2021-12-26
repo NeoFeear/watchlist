@@ -1,28 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AnimeService } from 'src/app/services/anime/anime.service';
+import { FilmService } from 'src/app/services/film/film.service';
 
 @Component({
-  selector: 'app-anime-detail',
-  templateUrl: './anime-detail.component.html',
-  styleUrls: ['./anime-detail.component.scss']
+  selector: 'app-film-detail',
+  templateUrl: './film-detail.component.html',
+  styleUrls: ['./film-detail.component.scss']
 })
 
-export class AnimeDetailComponent implements OnInit {
-  anime: any;
+export class FilmDetailComponent implements OnInit {
+  film: any;
   trailer: any;
 
   constructor(
-    private Anime: AnimeService,
+    private Film: FilmService,
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
 
-    this.Anime.get(id).subscribe((value: any) => {
-      this.anime = value;
-      this.trailer = this.searchVideo(this.anime.title);
+    this.Film.get(id).subscribe((value: any) => {
+      this.film = value;
+      this.trailer = this.searchVideo(this.film.title);
     });
   }
 
@@ -35,4 +35,5 @@ export class AnimeDetailComponent implements OnInit {
         return data.items[0].id.videoId;
       });
   }
+
 }

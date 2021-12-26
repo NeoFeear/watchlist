@@ -1,4 +1,8 @@
 <div class="container px-5 my-5" style="max-width: 700px;">
+    <button class="btn btn-lg btn-warning mb-5" [routerLink]="['/animes']">
+        < Retour
+    </button>
+    
     <div class="mb-3">
         <label class="form-label">Titre</label>
         <input class="form-control" type="text" placeholder="Titre" [(ngModel)]="anime.title" />
@@ -35,7 +39,7 @@
 
     <div class="mb-3">
         <label class="form-label">URL de l&#x27;affiche</label>
-        <input class="form-control" type="text" placeholder="URL de l'affiche" [(ngModel)]="anime.filmAffiche" />
+        <input class="form-control" type="text" placeholder="URL de l'affiche" [(ngModel)]="anime.affiche" />
     </div>
 
     <div class="mb-3">

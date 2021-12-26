@@ -18,6 +18,12 @@ import { AnimeNewComponent } from './anime/anime-new/anime-new.component';
 import { AnimeListComponent } from './anime/anime-list/anime-list.component';
 import { AnimeModifComponent } from './anime/anime-modif/anime-modif.component';
 
+import { FilmComponent } from './film/film.component';
+import { FilmDetailComponent } from './film/film-detail/film-detail.component';
+import { FilmListComponent } from './film/film-list/film-list.component';
+import { FilmModifComponent } from './film/film-modif/film-modif.component';
+import { FilmNewComponent } from './film/film-new/film-new.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +33,11 @@ import { AnimeModifComponent } from './anime/anime-modif/anime-modif.component';
     AnimeNewComponent,
     AnimeModifComponent,
     AnimeDetailComponent,
+    FilmComponent,
+    FilmDetailComponent,
+    FilmListComponent,
+    FilmModifComponent,
+    FilmNewComponent,
   ],
   imports: [
     BrowserModule,
