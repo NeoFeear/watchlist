@@ -1,1 +1,49 @@
-<p>anime-new works!</p>
+<div class="container px-5 my-5" style="max-width: 700px;">
+    <div class="mb-3">
+        <label class="form-label">Titre</label>
+        <input class="form-control" type="text" placeholder="Titre" [(ngModel)]="anime.title" />
+    </div>
+
+    <div class="row">
+        <div class="col-6 mb-3">
+            <label class="form-label">Note / 10</label>
+            <input class="form-control" type="text" placeholder="Note / 10" [(ngModel)]="anime.note" />
+        </div>
+
+        <div class="col-6 mb-3">
+            <label class="form-label">Nombre d&#x27;épisodes</label>
+            <input class="form-control" type="text" placeholder="Nombre d'épisodes" [(ngModel)]="anime.nbEpisodes" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 mb-3">
+            <label class="form-label">Auteur</label>
+            <input class="form-control" type="text" placeholder="Auteur" [(ngModel)]="anime.autor" />
+        </div>
+
+        <div class="col-6 mb-3">
+            <label class="form-label">Réalisateur</label>
+            <input class="form-control" type="text" placeholder="Réalisateur" [(ngModel)]="anime.realisator" />
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Studio</label>
+        <input class="form-control" type="text" placeholder="Studio" [(ngModel)]="anime.studio" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">URL de l&#x27;affiche</label>
+        <input class="form-control" type="text" placeholder="URL de l'affiche" [(ngModel)]="anime.filmAffiche" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Synopsis</label>
+        <textarea class="form-control" type="text" placeholder="Synopsis" [(ngModel)]="anime.synopsis" cols="30" rows="5"></textarea> 
+    </div>
+
+    <div class="d-grid">
+        <button class="btn btn-primary btn-lg" (click)="add()">Envoyer</button>
+    </div>
+</div>

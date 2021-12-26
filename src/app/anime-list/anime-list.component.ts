@@ -7,15 +7,16 @@ import { AnimeService } from '../services/anime/anime.service';
   styleUrls: ['./anime-list.component.scss']
 })
 export class AnimeListComponent implements OnInit {
-
-  animes: any = [];
+  animes!: any;
 
   constructor(
     private Anime: AnimeService
   ) { }
 
   ngOnInit(): void {
-    this.animes = this.Anime.animes;
+    this.Anime.getAllAnimes().subscribe((data: any) => {
+      this.animes = data;
+    });
   }
 
 }

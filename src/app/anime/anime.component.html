@@ -1,4 +1,4 @@
-<div class="row mb-5 py-3 bg-secondary">
+<!-- <div class="row mb-5 py-3 bg-secondary">
     <div class="col-2 d-flex align-items-center">
         <img [src]="animeAffiche" alt="{{ animeTitle }}" class="img-fluid img-responsive">
     </div>
@@ -6,7 +6,7 @@
     <div class="col d-flex flex-column">
         <div class="row d-flex align-items-start">
             <h2>
-                <b>[{{id}}] - {{ animeTitle }}</b>
+                <b>{{ animeTitle }}</b>
                 <span class="rounded-pill bg-success border border-dark ms-3 px-3 pb-1">{{ animeNote }}/10</span>
             </h2>
             <h5><u>Nombre d'épisodes:</u> {{ animeNbEpisodes }}</h5>
@@ -20,7 +20,24 @@
     </div>
 
     <div class="col-1 my-auto d-flex flex-column mx-auto">
-        <a [routerLink]="['/modifAnime', id]" class="btn btn-warning mb-3">M</a>
-        <button class="btn btn-danger">X</button>
+        <a [routerLink]="['/anime/modif', id]" class="btn btn-warning mb-3">M</a>
+        <button class="btn btn-danger" (click)="suppr()">X</button>
+    </div>
+</div> -->
+
+<a [routerLink]="['/anime/detail', id]">
+    <img class="img-thumbnail" style="width: 100%; height: 100%; max-height: 400px;" [src]="animeAffiche" alt="{{ animeTitle }}">
+</a>
+
+<div class="bg-white text-dark" style="margin-top: -5px; padding-top: 3px; height: 30px;">
+    <div class="row">
+        <div class="col-9 text-center">
+            <p><b>{{ animeNote }} / 10</b></p>
+        </div>
+        <div class="col-3">
+            <a [routerLink]="['/anime/modif', id]">
+                <fa-icon [icon]="faEdit"></fa-icon>
+            </a>
+        </div>
     </div>
 </div>

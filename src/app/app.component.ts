@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimeService } from './services/anime/anime.service';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +8,25 @@ import { AnimeService } from './services/anime/anime.service';
 })
 
 export class AppComponent implements OnInit {
-
   title: string = 'Watchlist';
-  animes:any = [];
+  time: number = 0;
 
-  constructor(
-    private Anime: AnimeService
-  ) {}
+  constructor() {}
 
   ngOnInit() {
-    this.animes = this.Anime.animes;
+    const counter = interval(1000);
+
+    counter.subscribe(
+      (value) => {
+        this.time = value;
+      },
+      (error) => {
+        console.log('Uh-oh, an error occurred! : ' + error);
+      },
+      () => {
+        console.log('Observable complete!');
+      }
+    );
   }
   
 }

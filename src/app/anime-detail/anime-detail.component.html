@@ -1,0 +1,21 @@
+<div class="row mb-5 py-3 bg-secondary">
+    <div class="col-2 d-flex align-items-center">
+        <img [src]="anime.filmAffiche" alt="{{ anime.title }}" class="img-fluid img-responsive">
+    </div>
+
+    <div class="col d-flex flex-column">
+        <div class="row d-flex align-items-start">
+            <h2>
+                <b>{{ anime.title }}</b>
+                <span class="rounded-pill bg-success border border-dark ms-3 px-3 pb-1">{{ anime.note }}/10</span>
+            </h2>
+            <h5><u>Nombre d'épisodes:</u> {{ anime.bbEpisodes }}</h5>
+            <h5><u>Auteur:</u> {{ anime.autor }} | <u>Réalisateur:</u> {{ anime.realisator }}</h5>
+            <h5><u>Studio:</u> {{ anime.studio }}</h5>
+        </div>
+
+        <div class="row d-flex align-items-end text-justify mt-auto pe-4" style="text-align: justify;">
+            <p>{{ anime.synopsis }}</p>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,49 @@
-<p>anime-modif works!</p>
+<div class="container px-5 my-5" style="max-width: 700px;">
+    <div class="mb-3">
+        <label class="form-label" for="titre">Titre</label>
+        <input class="form-control" type="text" placeholder="Titre" [(ngModel)]="anime.title" [value]="anime.title" />
+    </div>
+
+    <div class="row">
+        <div class="col-6 mb-3">
+            <label class="form-label" for="note10">Note / 10</label>
+            <input class="form-control" type="text" placeholder="Note / 10" [(ngModel)]="anime.note" [value]="anime.note" />
+        </div>
+
+        <div class="col-6 mb-3">
+            <label class="form-label" for="nombreDepisodes">Nombre d&#x27;épisodes</label>
+            <input class="form-control" type="text" placeholder="Nombre d'épisodes" [(ngModel)]="anime.nbEpisodes" [value]="anime.nbEpisodes" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 mb-3">
+            <label class="form-label" for="auteur">Auteur</label>
+            <input class="form-control" type="text" placeholder="Auteur" [(ngModel)]="anime.autor" [value]="anime.autor" />
+        </div>
+
+        <div class="col-6 mb-3">
+            <label class="form-label" for="realisateur">Réalisateur</label>
+            <input class="form-control" type="text" placeholder="Réalisateur" [(ngModel)]="anime.realisator" [value]="anime.realisator" />
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="studio">Studio</label>
+        <input class="form-control" type="text" placeholder="Studio" [(ngModel)]="anime.studio" [value]="anime.studio" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="urlDeLaffiche">URL de l&#x27;affiche</label>
+        <input class="form-control" type="text" placeholder="URL de l'affiche" [(ngModel)]="anime.filmAffiche" [value]="anime.filmAffiche" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="synopsis">Synopsis</label>
+        <textarea class="form-control" type="text" placeholder="Synopsis" [(ngModel)]="anime.synopsis" cols="30" rows="5" >{{ anime.synopsis }}</textarea> 
+    </div>
+
+    <div class="d-grid">
+        <button class="btn btn-primary btn-lg" (click)="modif()">Envoyer</button>
+    </div>
+</div>

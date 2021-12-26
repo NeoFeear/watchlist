@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,27 +11,12 @@ import { HomeComponent } from './home/home.component';
 import { AnimeNewComponent } from './anime-new/anime-new.component';
 import { AnimeModifComponent } from './anime-modif/anime-modif.component';
 import { AnimeListComponent } from './anime-list/anime-list.component';
-import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 
-const appRoutes: Routes = [
-  {
-    path: '',
-    component: HomeComponent 
-  },
-  {
-    path: 'animes',
-    component: AnimeListComponent
-  },
-  {
-    path: 'newAnime',
-    component: AnimeNewComponent
-  },
-  {
-    path: 'modifAnime/:id',
-    component: AnimeModifComponent
-  }
-];
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -40,12 +26,15 @@ const appRoutes: Routes = [
     AnimeListComponent,
     AnimeNewComponent,
     AnimeModifComponent,
+    AnimeDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    FontAwesomeModule
   ],
   providers: [
     AnimeService
