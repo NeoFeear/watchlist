@@ -15,6 +15,7 @@ export class AnimeComponent implements OnInit {
     @Input() id?: number;
     @Input() index?: number;
     @Input() animeTitle?: string;
+    @Input() animeStatus?: string;
     @Input() animeAutor?: string;
     @Input() animeRealisator?: string;
     @Input() animeStudio?: string;

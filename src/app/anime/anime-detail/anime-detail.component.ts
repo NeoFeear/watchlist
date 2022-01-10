@@ -1,27 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AnimeService } from 'src/app/services/anime/anime.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-anime-detail',
   templateUrl: './anime-detail.component.html',
   styleUrls: ['./anime-detail.component.scss']
 })
+
 export class AnimeDetailComponent implements OnInit {
   anime: any;
   trailer: any;
+  url: string = 'https://www.youtube.com/embed/';
+  urlSafe: SafeResourceUrl | undefined;
 
   constructor(
     private Anime: AnimeService,
     private route: ActivatedRoute,
+    public sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
 
-    this.Anime.get(id).subscribe((value: any) => {
+    this.Anime.get(id).subscribe(async (value: any) => {
       this.anime = value;
-      this.trailer = this.searchVideo(this.anime.title);
+      this.trailer = await this.searchVideo(this.anime.title);
+      this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url + this.trailer);
     });
   }
 

@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-lg btn-warning" [routerLink]="['/serie/new']">Ajouter une série</button>
+</div>
+
+<div class="row mt-5">
+    <app-serie 
+        class="col-6 col-sm-6 col-md-4 col-lg-3 mb-5"
+        *ngFor="let serie of series; let i = index"
+        [index]="i"
+        [id]="serie.id"
+        [serieTitre]="serie.titre"
+        [serieStatus]="serie.status"
+        [serieGenres]="serie.genres"
+        [serieCreateurs]="serie.createurs"
+        [serieProducteurs]="serie.producteurs"
+        [serieActeurs]="serie.acteurs"
+        [serieNbSaisons]="serie.nbSaisons" 
+        [serieNbEpisodes]="serie.nbEpisodes" 
+        [serieSynopsis]="serie.synopsis" 
+        [serieNote]="serie.note"
+        [serieAffiche]="serie.affiche">
+    </app-serie>
+</div>

@@ -1,0 +1,76 @@
+<div class="container px-5 my-5" style="max-width: 700px;">
+    <button class="btn btn-lg btn-warning mb-5" [routerLink]="['/series']">
+        < Retour
+    </button>
+    
+    <div class="mb-3">
+        <label class="form-label">Titre</label>
+        <input class="form-control" type="text" placeholder="Titre" [(ngModel)]="serie.titre" [value]="serie.titre" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">État</label>
+        <select class="form-control" [(ngModel)]="serie.status" [value]="serie.status">
+            <option value="">Choisir un état</option>
+            <option value="1">Pas commencé</option>
+            <option value="2">En cours</option>
+            <option value="3">À jour</option>
+            <option value="4">Terminé</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col-6 mb-3">
+            <label class="form-label">Note / 10</label>
+            <input class="form-control" type="number" placeholder="Note / 10" [(ngModel)]="serie.note" [value]="serie.note" />
+        </div>
+
+        <div class="col-6 mb-3">
+            <label class="form-label">Genres</label>
+            <input class="form-control" type="text" placeholder="Genres" [(ngModel)]="serie.genres" [value]="serie.genres" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 mb-3">
+            <label class="form-label">Nombre de saisons</label>
+            <input class="form-control" type="number" placeholder="Nombre de saisons" [(ngModel)]="serie.nbSaisons" [value]="serie.nbSaisons" />
+        </div>
+
+        <div class="col-6 mb-3">
+            <label class="form-label">Nombre d'épisodes</label>
+            <input class="form-control" type="number" placeholder="Nombre d'épisodes" [(ngModel)]="serie.nbEpisodes" [value]="serie.nbEpisodes" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 mb-3">
+            <label class="form-label">Créateurs</label>
+            <input class="form-control" type="text" placeholder="Créateurs" [(ngModel)]="serie.createurs" [value]="serie.createurs" />
+        </div>
+
+        <div class="col-6 mb-3">
+            <label class="form-label">Producteurs</label>
+            <input class="form-control" type="text" placeholder="Producteurs" [(ngModel)]="serie.producteurs" [value]="serie.producteurs" />
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Acteurs principaux</label>
+        <input class="form-control" type="text" placeholder="Acteurs principaux" [(ngModel)]="serie.acteurs" [value]="serie.acteurs" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">URL de l&#x27;affiche</label>
+        <input class="form-control" type="text" placeholder="URL de l'affiche" [(ngModel)]="serie.affiche" [value]="serie.affiche" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Synopsis</label>
+        <textarea class="form-control" type="text" placeholder="Synopsis" [(ngModel)]="serie.synopsis" cols="30" rows="5">{{ serie.synopsis }}</textarea> 
+    </div>
+
+    <div class="d-grid">
+        <button class="btn btn-primary btn-lg" (click)="update()">Mettre à jour</button>
+    </div>
+</div>

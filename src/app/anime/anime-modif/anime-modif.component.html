@@ -1,7 +1,22 @@
 <div class="container px-5 my-5" style="max-width: 700px;">
+    <button class="btn btn-lg btn-warning mb-5" [routerLink]="['/animes']">
+        < Retour
+    </button>
+    
     <div class="mb-3">
         <label class="form-label" for="titre">Titre</label>
         <input class="form-control" type="text" placeholder="Titre" [(ngModel)]="anime.title" [value]="anime.title" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">État</label>
+        <select class="form-control" [(ngModel)]="anime.status" [value]="anime.status">
+            <option value="">Choisir un état</option>
+            <option value="1">Pas commencé</option>
+            <option value="2">En cours</option>
+            <option value="3">À jour</option>
+            <option value="4">Terminé</option>
+        </select>
     </div>
 
     <div class="row">
@@ -35,7 +50,7 @@
 
     <div class="mb-3">
         <label class="form-label" for="urlDeLaffiche">URL de l&#x27;affiche</label>
-        <input class="form-control" type="text" placeholder="URL de l'affiche" [(ngModel)]="anime.filmAffiche" [value]="anime.filmAffiche" />
+        <input class="form-control" type="text" placeholder="URL de l'affiche" [(ngModel)]="anime.affiche" [value]="anime.affiche" />
     </div>
 
     <div class="mb-3">
@@ -44,6 +59,6 @@
     </div>
 
     <div class="d-grid">
-        <button class="btn btn-primary btn-lg" (click)="modif()">Envoyer</button>
+        <button class="btn btn-primary btn-lg" (click)="update()">Envoyer</button>
     </div>
 </div>

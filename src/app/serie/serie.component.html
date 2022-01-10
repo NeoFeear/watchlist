@@ -1,0 +1,28 @@
+<section>
+    <div class="text-white text-center border border-5 py-1" [ngStyle]="{
+        'background-color': serieStatus === '1' ? '#3396ff' : serieStatus === '2' ? 'orange' : serieStatus === '3' ? 'green' : 'purple',
+        'margin-bottom': '-10px'
+    }">
+        <h4>{{ serieStatus === '1' ? 'Pas commencé' : serieStatus === '2' ? 'En cours' : serieStatus === '3' ? 'À jour' : 'Terminé' }}</h4>
+    </div>
+
+    <a [routerLink]="['/serie/detail', id]">
+        <img class="img-thumbnail w-100 h-100" style="max-height: 400px;" [src]="serieAffiche" alt="{{ serieTitre }}">
+    </a>
+
+    <div class="bg-white text-dark pt-2" style="margin-top: -5px; height: 45px;">
+        <div class="row">
+            <div class="col-6 col-xl-7 text-center">
+                <p><b>{{ serieNote }} / 10</b></p>
+            </div>
+            <div class="col">
+                <button class="btn btn-sm btn-warning me-0 me-sm-2 me-md-3" [routerLink]="['/serie/modif', id]">
+                    <fa-icon [icon]="faEdit"></fa-icon>
+                </button>
+                <button class="btn btn-sm btn-danger" (click)="suppr()">
+                    <fa-icon [icon]="faTrash"></fa-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

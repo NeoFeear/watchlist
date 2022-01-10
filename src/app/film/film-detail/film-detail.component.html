@@ -1,0 +1,37 @@
+<button class="btn btn-lg btn-warning mb-5" [routerLink]="['/films']">
+    < Retour
+</button>
+
+<div class="bg-secondary border border-3 rounded px-5 py-3 text-dark">
+    <div class="row mb-5 py-3">
+        <div class="col-12 col-md-6 col-lg-3 mb-3 mb-md-0 d-flex align-items-center">
+            <img [src]="film.affiche" alt="{{ film.title }}" class="img-fluid img-responsive border border-4 border-dark">
+        </div>
+    
+        <div class="col d-flex flex-column">
+            <div class="row">
+                <h1 style="font-size: 50px;"><b>{{ film.title }}</b></h1>
+
+                <h2 class="my-5">
+                    <b><u>Ma note :</u> <span class="rounded-pill text-white bg-success border border-2 border-dark ms-3 px-3 pb-1">{{ film.note }} / 10</span></b>
+                </h2>
+
+                <h5><u>Durée:</u> {{ film.duree }}</h5>
+                <h5><u>Genre:</u> {{ film.genre }}</h5>
+                <h5><u>Scénariste:</u> {{ film.scenarist }}</h5>
+                <h5><u>Réalisateur:</u> {{ film.realisator }}</h5>
+                <h5><u>Acteurs principaux:</u> {{ film.actors }}</h5>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mb-5">
+        <h1 class="text-decoration-underline fw-bold mb-3">Synopsis :</h1>
+        <h4 style="text-align: justify;">{{ film.synopsis }}</h4>
+    </div>
+    
+    <div class="row mb-5 d-flex justify-content-center">
+        <h1 class="text-decoration-underline fw-bold mb-3 text-start">Bande annonce :</h1>
+        <iframe style="width: 800px; height: 450px;" [src]="urlSafe" title="{{ film.title }} | BANDE ANNONCE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>

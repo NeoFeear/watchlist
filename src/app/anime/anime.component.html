@@ -1,46 +1,28 @@
-<!-- <div class="row mb-5 py-3 bg-secondary">
-    <div class="col-2 d-flex align-items-center">
-        <img [src]="animeAffiche" alt="{{ animeTitle }}" class="img-fluid img-responsive">
+<section>
+    <div class="text-white text-center border border-5 py-1" [ngStyle]="{
+        'background-color': animeStatus === '1' ? '#3396ff' : animeStatus === '2' ? 'orange' : animeStatus === '3' ? 'green' : 'purple',
+        'margin-bottom': '-10px'
+    }">
+        <h4>{{ animeStatus === '1' ? 'Pas commencé' : animeStatus === '2' ? 'En cours' : animeStatus === '3' ? 'À jour' : 'Terminé' }}</h4>
     </div>
 
-    <div class="col d-flex flex-column">
-        <div class="row d-flex align-items-start">
-            <h2>
-                <b>{{ animeTitle }}</b>
-                <span class="rounded-pill bg-success border border-dark ms-3 px-3 pb-1">{{ animeNote }}/10</span>
-            </h2>
-            <h5><u>Nombre d'épisodes:</u> {{ animeNbEpisodes }}</h5>
-            <h5><u>Auteur:</u> {{ animeAutor }} | <u>Réalisateur:</u> {{ animeRealisator }}</h5>
-            <h5><u>Studio:</u> {{ animeStudio }}</h5>
-        </div>
+    <a [routerLink]="['/anime/detail', id]">
+        <img class="img-thumbnail w-100 h-100" id="affiche" style="max-height: 400px;" [src]="animeAffiche" alt="{{ animeTitle }}">
+    </a>
 
-        <div class="row d-flex align-items-end text-justify mt-auto pe-4" style="text-align: justify;">
-            <p>{{ animeSynopsis }}</p>
-        </div>
-    </div>
-
-    <div class="col-1 my-auto d-flex flex-column mx-auto">
-        <a [routerLink]="['/anime/modif', id]" class="btn btn-warning mb-3">M</a>
-        <button class="btn btn-danger" (click)="suppr()">X</button>
-    </div>
-</div> -->
-
-<a [routerLink]="['/anime/detail', id]">
-    <img class="img-thumbnail" style="width: 100%; height: 100%; max-height: 400px;" [src]="animeAffiche" alt="{{ animeTitle }}">
-</a>
-
-<div class="bg-white text-dark" style="margin-top: -5px; padding-top: 10px; height: 45px;">
-    <div class="row">
-        <div class="col-6 col-xl-7 text-center">
-            <p><b>{{ animeNote }} / 10</b></p>
-        </div>
-        <div class="col">
-            <button class="btn btn-sm btn-warning me-0 me-sm-2 me-md-3" [routerLink]="['/anime/modif', id]">
-                <fa-icon [icon]="faEdit"></fa-icon>
-            </button>
-            <button class="btn btn-sm btn-danger" (click)="suppr()">
-                <fa-icon [icon]="faTrash"></fa-icon>
-            </button>
+    <div class="bg-white text-dark pt-2" style="margin-top: -5px; height: 45px;">
+        <div class="row">
+            <div class="col-6 col-xl-7 text-center">
+                <p><b>{{ animeStatus !== '1' ? animeNote + " / 10" : "" }}</b></p>
+            </div>
+            <div class="col">
+                <button class="btn btn-sm btn-warning me-0 me-sm-2 me-md-3" [routerLink]="['/anime/modif', id]">
+                    <fa-icon [icon]="faEdit"></fa-icon>
+                </button>
+                <button class="btn btn-sm btn-danger" (click)="suppr()">
+                    <fa-icon [icon]="faTrash"></fa-icon>
+                </button>
+            </div>
         </div>
     </div>
-</div>
+</section>

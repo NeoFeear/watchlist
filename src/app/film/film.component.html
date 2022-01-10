@@ -1,0 +1,28 @@
+<section>
+    <div class="text-white text-center border border-5 py-1" [ngStyle]="{
+        'background-color': filmStatus === '1' ? 'orange' : 'purple',
+        'margin-bottom': '-10px'
+    }">
+        <h4>{{ filmStatus === '1' ? 'À regarder' : 'Terminé' }}</h4>
+    </div>
+
+    <a [routerLink]="['/film/detail', id]">
+        <img class="img-thumbnail w-100 h-100" style="max-height: 400px;" [src]="filmAffiche" alt="{{ filmTitle }}">
+    </a>
+
+    <div class="bg-white text-dark pt-2" style="margin-top: -5px; height: 45px;">
+        <div class="row">
+            <div class="col-6 col-xl-7 text-center">
+                <p><b>{{ filmStatus !== '1' ? filmNote + " / 10" : "" }}</b></p>
+            </div>
+            <div class="col">
+                <button class="btn btn-sm btn-warning me-0 me-sm-2 me-md-3" [routerLink]="['/film/modif', id]">
+                    <fa-icon [icon]="faEdit"></fa-icon>
+                </button>
+                <button class="btn btn-sm btn-danger" (click)="suppr()">
+                    <fa-icon [icon]="faTrash"></fa-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

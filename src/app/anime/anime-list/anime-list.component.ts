@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimeService } from 'src/app/services/anime/anime.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-anime-list',
@@ -15,7 +16,7 @@ export class AnimeListComponent implements OnInit {
 
   ngOnInit(): void {
     this.Anime.getAllAnimes().subscribe((data: any) => {
-      this.animes = data;
+      this.animes = _.orderBy(data, ['status', 'title']);
     });
   }
 

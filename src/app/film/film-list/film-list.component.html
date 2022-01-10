@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-lg btn-warning" [routerLink]="['/film/new']">Ajouter un film</button>
+</div>
+
+<div class="row mt-5">
+    <app-film 
+        class="col-6 col-sm-6 col-md-4 col-lg-3"
+        *ngFor="let film of films; let i = index"
+        [index]="i"
+        [id]="film.id"
+        [filmTitle]="film.title"
+        [filmStatus]="film.status"
+        [filmAutor]="film.autor" 
+        [filmRealisator]="film.realisator" 
+        [filmDuree]="film.duree" 
+        [filmSynopsis]="film.synopsis" 
+        [filmNote]="film.note"
+        [filmAffiche]="film.affiche">
+    </app-film>
+</div>
