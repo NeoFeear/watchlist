@@ -33,4 +33,7 @@
         <h1 class="text-decoration-underline fw-bold mb-3 text-start">Bande annonce :</h1>
         <iframe style="width: 800px; height: 450px;" [src]="urlSafe" title="{{ anime.title }} | BANDE ANNONCE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+    
+    <a href="https://www.youtube.com/embed/{{trailer.__zone_symbol__value}}">Voir la BA</a>
+    {{trailer|json}}
 </div>
