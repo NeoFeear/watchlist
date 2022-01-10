@@ -13,7 +13,7 @@
     <div class="bg-white text-dark pt-2" style="margin-top: -5px; height: 45px;">
         <div class="row">
             <div class="col-6 col-xl-7 text-center">
-                <p><b>{{ serieNote }} / 10</b></p>
+                <p><b><p><b>{{ serieStatus !== '1' ? serieNote + " / 10" : "" }}</b></p></b></p>
             </div>
             <div class="col">
                 <button class="btn btn-sm btn-warning me-0 me-sm-2 me-md-3" [routerLink]="['/serie/modif', id]">
