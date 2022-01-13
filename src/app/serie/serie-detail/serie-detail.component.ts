@@ -25,7 +25,7 @@ export class SerieDetailComponent implements OnInit {
 
     this.Serie.get(id).subscribe(async (value: any) => {
       this.serie = value;
-      this.trailer = await this.searchVideo(this.serie.title);
+      this.trailer = await this.searchVideo(this.serie.titre);
       this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url + this.trailer);
     });
   }
